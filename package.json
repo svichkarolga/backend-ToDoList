@@ -1,0 +1,27 @@
+{
+  "name": "backend-todolist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "start": "node ./src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svichkarolga/backend-ToDoList.git"
+  },
+  "keywords": [],
+  "author": "olga <syns41@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svichkarolga/backend-ToDoList/issues"
+  },
+  "homepage": "https://github.com/svichkarolga/backend-ToDoList#readme",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "eslint": "^9.20.0",
+    "nodemon": "^3.1.9"
+  }
+}
