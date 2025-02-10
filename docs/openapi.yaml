@@ -13,8 +13,8 @@ security: []
 servers:
   - url: http://localhost:3000
     description: Local development server
-  # - url: https://aqua-mind.onrender.com
-  #   description: Production server
+  - https://todolist-app-6cqj.onrender.com/
+    description: Production server
 paths:
   /task/{taskId}:
     get:
