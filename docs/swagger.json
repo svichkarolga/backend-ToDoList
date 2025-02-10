@@ -262,10 +262,10 @@
       "task": {
         "type": "object",
         "required": [
-          "task"
+          "title"
         ],
         "properties": {
-          "task": {
+          "title": {
             "description": "Title of task",
             "type": "string",
             "example": "Water"
