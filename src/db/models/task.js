@@ -4,9 +4,15 @@ const taskSchema = new Schema(
   {
     task: {
       type: String,
+      required: true,
     },
     description: {
       type: String,
+    },
+    columnName: {
+      type: String,
+      enum: ['ToDo', 'In Progress', 'Done'],
+      default: 'ToDo',
     },
   },
   {

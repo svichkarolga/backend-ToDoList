@@ -23,7 +23,11 @@ export const getTaskByIdController = async (req, res, next) => {
 
 export const createTaskController = async (req, res) => {
   const { taskId } = req.params;
-  const task = await createTask({ ...req.body, taskId });
+  const task = await createTask({
+    ...req.body,
+    taskId,
+    columnName: req.body.columnName || 'ToDo',
+  });
   res.status(201).json({
     status: 201,
     message: 'Successfully created a task!',

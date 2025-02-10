@@ -13,6 +13,10 @@
     {
       "url": "http://localhost:3000",
       "description": "Local development server"
+    },
+    {
+      "url": "https://todolist-app-6cqj.onrender.com/",
+      "description": "Production server"
     }
   ],
   "security": [],
@@ -257,6 +261,9 @@
     "schemas": {
       "task": {
         "type": "object",
+        "required": [
+          "task"
+        ],
         "properties": {
           "task": {
             "description": "Title of task",
@@ -267,6 +274,16 @@
             "description": "The description of task",
             "type": "string",
             "example": "Water the pants in the house"
+          },
+          "columnName": {
+            "description": "To which column does this task belong",
+            "type": "string",
+            "enum": [
+              "ToDo",
+              "In Progress",
+              "Done"
+            ],
+            "default": "ToDo"
           }
         }
       }
