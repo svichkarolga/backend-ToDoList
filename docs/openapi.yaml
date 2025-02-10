@@ -1,0 +1,28 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: ToDoList app
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  description: This is a documentation of ToDoList app
+tags:
+  - name: Task
+    description: Operations about task.
+security: []
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+  # - url: https://aqua-mind.onrender.com
+  #   description: Production server
+paths:
+  /task/{taskId}:
+    get:
+      $ref: '../swagger/path/task/{id}/get.yaml'
+    patch:
+      $ref: '../swagger/path/task/{id}/patch.yaml'
+    delete:
+      $ref: '../swagger/path/task/{id}/delete.yaml'
+  /task:
+    post:
+      $ref: '../swagger/path/task/post.yaml'

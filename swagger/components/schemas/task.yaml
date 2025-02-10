@@ -1,0 +1,11 @@
+type: object
+properties:
+  task:
+    description: Title of task
+    type: string
+    example: Water
+  description:
+    description: The description of task
+    type: string
+    example: Water the pants in the house
+

@@ -1,0 +1,44 @@
+tags:
+  - Tasks
+summary: Create task
+operationId: createTask
+description: 'Create a new task'
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          task:
+            description: 'Title of task'
+            type: string
+            example: 'Water'
+          description:
+            description: 'The description of task'
+            type: string
+            example: 'Water the plants in the house'
+responses:
+  '201':
+    description: Successfully created a task
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 201
+            message:
+              type: string
+              example: Successfully created a task!
+            data:
+              type: object
+              $ref: '../../components/schemas/task.yaml'
+  '400':
+    $ref: ../../components/responses/400.yaml
+  '404':
+    $ref: '../../components/responses/404.yaml'
