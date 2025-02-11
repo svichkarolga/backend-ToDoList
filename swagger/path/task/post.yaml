@@ -9,7 +9,7 @@ requestBody:
       schema:
         type: object
         properties:
-          task:
+          title:
             description: 'Title of task'
             type: string
             example: 'Water'
@@ -17,6 +17,11 @@ requestBody:
             description: 'The description of task'
             type: string
             example: 'Water the plants in the house'
+          columnName:
+            description: 'Column to which this task belong'
+            type: string
+            enum: ['ToDo', 'In Progress', 'Done']
+            default: ToDo
 responses:
   '201':
     description: Successfully created a task

@@ -1,11 +1,22 @@
 import { getEnvVar } from '../utils/getEnvVar.js';
 import {
+  getAllTasks,
   getTaskById,
   createTask,
   patchTask,
   deleteTask,
 } from '../services/task.js';
 import createHttpError from 'http-errors';
+
+export const getAllTasksController = async (req, res) => {
+  const tasks = await getAllTasks();
+
+  res.json({
+    status: 200,
+    message: 'Successfully found tasks!',
+    data: tasks,
+  });
+};
 
 export const getTaskByIdController = async (req, res, next) => {
   const { taskId } = req.params;

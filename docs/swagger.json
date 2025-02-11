@@ -114,6 +114,16 @@
                     "description": "The description of task",
                     "type": "string",
                     "example": "Water the plants in the house"
+                  },
+                  "columnName": {
+                    "description": "Column to which this task belong",
+                    "type": "string",
+                    "enum": [
+                      "ToDo",
+                      "In Progress",
+                      "Done"
+                    ],
+                    "default": "ToDo"
                   }
                 }
               }
@@ -189,6 +199,50 @@
       }
     },
     "/task": {
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Get all tasks",
+        "operationId": "getAllTasks",
+        "description": "Get a list of all tasks",
+        "responses": {
+          "200": {
+            "description": "Successfully get all tasks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "status",
+                    "message",
+                    "data"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully found tasks!"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/task"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
+          }
+        }
+      },
       "post": {
         "tags": [
           "Tasks"
@@ -202,7 +256,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "task": {
+                  "title": {
                     "description": "Title of task",
                     "type": "string",
                     "example": "Water"
@@ -211,6 +265,16 @@
                     "description": "The description of task",
                     "type": "string",
                     "example": "Water the plants in the house"
+                  },
+                  "columnName": {
+                    "description": "Column to which this task belong",
+                    "type": "string",
+                    "enum": [
+                      "ToDo",
+                      "In Progress",
+                      "Done"
+                    ],
+                    "default": "ToDo"
                   }
                 }
               }

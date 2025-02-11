@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import {
+  getAllTasksController,
   getTaskByIdController,
   createTaskController,
   patchTaskController,
@@ -11,6 +12,7 @@ import { taskSchema } from '../validation/task.js';
 
 const router = Router();
 
+router.get('/', ctrlWrapper(getAllTasksController));
 router.get('/:taskId', ctrlWrapper(getTaskByIdController));
 router.post('/', validateBody(taskSchema), ctrlWrapper(createTaskController));
 router.patch(

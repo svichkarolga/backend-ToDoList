@@ -1,5 +1,10 @@
 import { TaskCollection } from '../db/models/task.js';
 
+export const getAllTasks = async () => {
+  const task = await TaskCollection.find();
+  return task;
+};
+
 export const getTaskById = async (taskId) => {
   const task = await TaskCollection.findOne({ _id: taskId });
   return task;
