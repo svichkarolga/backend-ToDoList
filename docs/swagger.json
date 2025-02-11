@@ -261,9 +261,6 @@
     "schemas": {
       "task": {
         "type": "object",
-        "required": [
-          "title"
-        ],
         "properties": {
           "title": {
             "description": "Title of task",
